@@ -13,7 +13,12 @@ const Template: Story<HeaderProps> = (args) => <Header {...args} />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
-  user: {},
+  title: "The Rosedale Pages",
+  dadLabel: "His Side",
+  dadUrl: "pedigree.php?personID=I2&amp;tree=pageFamily",
+  momlabel: "Her Side",
+  momUrl: "pedigree.php?personID=I1&amp;tree=pageFamily",
+  featureLinksMarkup: `<a href="http://tngsitebuilding.com" title="Third Link">Third Link</a>|<a href="http://tngsitebuilding.com/blog" title="Fourth Link">Fourth Link</a>`,
 };
 
 export const LoggedOut = Template.bind({});

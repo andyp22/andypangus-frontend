@@ -1,62 +1,57 @@
 import React from "react";
-
-import { ButtonComponent } from "../../../components/shared/Button/Button";
 import "./header.scss";
 
 export interface HeaderProps {
-  user?: {};
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
+  title: string;
+  dadLabel?: string;
+  dadUrl?: string;
+  momlabel?: string;
+  momUrl?: string;
+  featureLinksMarkup?: string;
 }
 
+export interface ListItemProps {
+  url: string;
+  label: string;
+}
+
+const ListItem: React.FC<ListItemProps> = ({ url, label }) => (
+  <li>
+    <a href={url}>{label}</a>
+  </li>
+);
+
 export const Header: React.FC<HeaderProps> = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}) => (
-  <header>
-    <div className="wrapper">
-      <div>
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g fill="none" fillRule="evenodd">
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>Acme</h1>
+  title,
+  dadLabel,
+  dadUrl,
+  momlabel,
+  momUrl,
+  featureLinksMarkup,
+}) => {
+  let dadListItem, momListItem;
+  if (dadLabel && dadUrl)
+    dadListItem = <ListItem url={dadUrl} label={dadLabel} />;
+  if (momlabel && momUrl)
+    momListItem = <ListItem url={momUrl} label={momlabel} />;
+
+  const bits = featureLinksMarkup?.split("|");
+  const listItems = bits?.map((li) => (
+    <li dangerouslySetInnerHTML={{ __html: li || "" }}></li>
+  ));
+
+  return (
+    <div className="theader">
+      <div id="tmast" className="mast">
+        <h1>{title}</h1>
       </div>
-      <div>
-        {user ? (
-          <ButtonComponent small={true} onClick={onLogout} text="Log out" />
-        ) : (
-          <>
-            <ButtonComponent small={true} onClick={onLogin} text="Log in" />
-            <ButtonComponent
-              intent="primary"
-              small={true}
-              onClick={onCreateAccount}
-              text="Sign up"
-            />
-          </>
-        )}
+      <div id="tmenu">
+        <ul>
+          {dadListItem}
+          {momListItem}
+          {listItems}
+        </ul>
       </div>
     </div>
-  </header>
-);
+  );
+};

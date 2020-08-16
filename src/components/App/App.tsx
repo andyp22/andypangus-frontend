@@ -1,8 +1,9 @@
-import * as ReactHabitat from "react-habitat";
+import ReactHabitat from "react-habitat";
 import "./App.scss";
 
 // Import container components
 import { ExamplePage } from "../ExamplePage/ExamplePage";
+import { Header } from "../shared/Header/Header";
 
 // Define an array of containers with the HTML ID's to attach to
 const containers = [
@@ -10,9 +11,13 @@ const containers = [
     id: "ExampleContainer",
     component: ExamplePage,
   },
+  {
+    id: "HeaderContainer",
+    component: Header,
+  },
 ];
 
-class App extends ReactHabitat.Bootstrapper {
+export class App extends ReactHabitat.Bootstrapper {
   constructor() {
     super();
 

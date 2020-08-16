@@ -4,24 +4,30 @@ import { Header } from "../shared/Header/Header";
 import "./page.scss";
 
 export interface PageProps {
-  user?: {};
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
+  title: string;
+  dadLabel?: string;
+  dadUrl?: string;
+  momlabel?: string;
+  momUrl?: string;
+  featureLinksMarkup?: string;
 }
 
 export const Page: React.FC<PageProps> = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
+  title,
+  dadLabel,
+  dadUrl,
+  momlabel,
+  momUrl,
+  featureLinksMarkup,
 }) => (
   <article>
     <Header
-      user={user}
-      onLogin={onLogin}
-      onLogout={onLogout}
-      onCreateAccount={onCreateAccount}
+      title={title}
+      dadLabel={dadLabel}
+      dadUrl={dadUrl}
+      momlabel={momlabel}
+      momUrl={momUrl}
+      featureLinksMarkup={featureLinksMarkup}
     />
 
     <section>
