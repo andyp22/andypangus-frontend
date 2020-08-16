@@ -1,31 +1,21 @@
 import ReactHabitat from "react-habitat";
+import { Containers } from "../ReactHabitats/ReactHabitats";
+
 import "./App.scss";
 
-// Import container components
-import { ExamplePage } from "../ExamplePage/ExamplePage";
-import { Header } from "../shared/Header/Header";
-
-// Define an array of containers with the HTML ID's to attach to
-const containers = [
-  {
-    id: "ExampleContainer",
-    component: ExamplePage,
-  },
-  {
-    id: "HeaderContainer",
-    component: Header,
-  },
-];
-
 export class App extends ReactHabitat.Bootstrapper {
+  _containers: Containers;
+
   constructor() {
     super();
+
+    this._containers = new Containers();
 
     // Create a new container builder:
     const builder = new ReactHabitat.ContainerBuilder();
 
     // Register container components
-    for (let container of containers) {
+    for (let container of this._containers.getHabitats()) {
       builder.register(container.component).as(container.id);
     }
 
