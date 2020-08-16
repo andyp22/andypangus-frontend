@@ -13,10 +13,11 @@ export interface HeaderProps {
 export interface ListItemProps {
   url: string;
   label: string;
+  keyNum: number;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ url, label }) => (
-  <li>
+const ListItem: React.FC<ListItemProps> = ({ url, label, keyNum }) => (
+  <li key={keyNum}>
     <a href={url}>{label}</a>
   </li>
 );
@@ -31,13 +32,13 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   let dadListItem, momListItem;
   if (dadLabel && dadUrl)
-    dadListItem = <ListItem url={dadUrl} label={dadLabel} />;
+    dadListItem = <ListItem url={dadUrl} label={dadLabel} keyNum={1} />;
   if (momlabel && momUrl)
-    momListItem = <ListItem url={momUrl} label={momlabel} />;
+    momListItem = <ListItem url={momUrl} label={momlabel} keyNum={2} />;
 
   const bits = featureLinksMarkup?.split("|");
-  const listItems = bits?.map((li) => (
-    <li dangerouslySetInnerHTML={{ __html: li || "" }}></li>
+  const listItems = bits?.map((li, ind) => (
+    <li dangerouslySetInnerHTML={{ __html: li || "" }} key={ind + 3}></li>
   ));
 
   return (

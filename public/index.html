@@ -28,34 +28,42 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="tcontainer">
+      <div id="tbackground">
+        <div id="tpage">
+          <div id="HeaderContainerWrapper" data-component="HeaderContainer"></div>
+          <script>
+            var props = {
+              title: 'The Rosedale Pages',
+              dadLabel: 'His Side',
+              dadUrl: 'pedigree.php?personID=I2&amp;tree=pageFamily',
+              momlabel: 'Her Side',
+              momUrl: 'pedigree.php?personID=I1&amp;tree=pageFamily',
+              featureLinksMarkup: `<a href="http://tngsitebuilding.com" title="Third Link">Third Link</a>|<a href="http://tngsitebuilding.com/blog" title="Fourth Link">Fourth Link</a>`
+            };
+            document.getElementById("HeaderContainerWrapper").setAttribute('data-props', JSON.stringify(props));
+          </script>
 
-    <div id="HeaderContainerWrapper" data-component="HeaderContainer"></div>
-    <script>
-      var props = {
-        title: 'The Rosedale Pages',
-        dadLabel: 'His Side',
-        dadUrl: 'pedigree.php?personID=I2&amp;tree=pageFamily',
-        momlabel: 'Her Side',
-        momUrl: 'pedigree.php?personID=I1&amp;tree=pageFamily',
-        featureLinksMarkup: `<a href="http://tngsitebuilding.com" title="Third Link">Third Link</a>|<a href="http://tngsitebuilding.com/blog" title="Fourth Link">Fourth Link</a>`
-      };
-      document.getElementById("HeaderContainerWrapper").setAttribute('data-props', JSON.stringify(props));
-    </script>
+          <div id="tbody">
 
-    <div
-      data-component="ExampleContainer"
-      data-prop-title="Johny Five"></div>
+            <div
+              data-component="ExampleContainer"
+              data-prop-title="Johny Five"></div>
 
-    <div id="FooterContainerWrapper" data-component="FooterContainer"></div>
-    <script>
-      var props = {
-        markup: `<p class="smaller center">This site powered by <a href="https://tngsitebuilding.com" class="footer" target="_blank" title="Learn more about TNG">The Next Generation of Genealogy Sitebuilding</a> v. 12.3,  written by Darrin Lythgoe  &copy; 2001-2020.</p>
-        <p class="smaller center">Maintained by <a href="suggest.php?" class="footer" title="Contact Us">Andrew Page</a>.</p>
-        `
-      };
-      document.getElementById("FooterContainerWrapper").setAttribute('data-props', JSON.stringify(props));
-    </script>
-    
+          </div>
+          <hr size="1" />
+
+          <div id="FooterContainerWrapper" data-component="FooterContainer"></div>
+          <script>
+            var props = {
+              markup: `<p class="smaller center">This site powered by <a href="https://tngsitebuilding.com" class="footer" target="_blank" title="Learn more about TNG">The Next Generation of Genealogy Sitebuilding</a> v. 12.3,  written by Darrin Lythgoe  &copy; 2001-2020.</p>
+              <p class="smaller center">Maintained by <a href="suggest.php?" class="footer" title="Contact Us">Andrew Page</a>.</p>
+              `
+            };
+            document.getElementById("FooterContainerWrapper").setAttribute('data-props', JSON.stringify(props));
+          </script>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
