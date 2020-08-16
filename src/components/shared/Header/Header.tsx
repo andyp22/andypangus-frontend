@@ -1,5 +1,5 @@
 import React from "react";
-import "./Headera.scss";
+import "./Header.scss";
 
 export interface HeaderProps {
   title: string;
