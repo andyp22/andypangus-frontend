@@ -1,6 +1,7 @@
 // Import container components
 import { ExamplePage } from "../ExamplePage/ExamplePage";
 import { Header } from "../shared/Header/Header";
+import { Footer } from "../shared/Footer/Footer";
 
 export interface IReactHabitatContainer {
   id: string;
@@ -19,6 +20,10 @@ export class Containers {
       {
         id: "HeaderContainer",
         component: Header,
+      },
+      {
+        id: "FooterContainer",
+        component: Footer,
       },
     ];
   }

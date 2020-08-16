@@ -46,15 +46,16 @@
     <div
       data-component="ExampleContainer"
       data-prop-title="Johny Five"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="FooterContainerWrapper" data-component="FooterContainer"></div>
+    <script>
+      var props = {
+        markup: `<p class="smaller center">This site powered by <a href="https://tngsitebuilding.com" class="footer" target="_blank" title="Learn more about TNG">The Next Generation of Genealogy Sitebuilding</a> v. 12.3,  written by Darrin Lythgoe  &copy; 2001-2020.</p>
+        <p class="smaller center">Maintained by <a href="suggest.php?" class="footer" title="Contact Us">Andrew Page</a>.</p>
+        `
+      };
+      document.getElementById("FooterContainerWrapper").setAttribute('data-props', JSON.stringify(props));
+    </script>
+    
   </body>
 </html>
