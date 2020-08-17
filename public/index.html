@@ -31,6 +31,8 @@
     <div id="tcontainer">
       <div id="tbackground">
         <div id="tpage">
+
+          <!-- REACT Header Component -->
           <div id="HeaderContainerWrapper" data-component="HeaderContainer"></div>
           <script>
             var props = {
@@ -43,16 +45,22 @@
             };
             document.getElementById("HeaderContainerWrapper").setAttribute('data-props', JSON.stringify(props));
           </script>
+          <!-- END: REACT Header Component -->
 
           <div id="tbody">
 
+            <!-- REACT Example Component -->
             <div
               data-component="ExampleContainer"
-              data-prop-title="Johny Five"></div>
+              data-prop-title="Johny Five">
+            </div>
+            <!-- END: REACT Example Component -->
 
           </div>
+
           <hr size="1" />
 
+          <!-- REACT Footer Component -->
           <div id="FooterContainerWrapper" data-component="FooterContainer"></div>
           <script>
             var props = {
@@ -62,6 +70,8 @@
             };
             document.getElementById("FooterContainerWrapper").setAttribute('data-props', JSON.stringify(props));
           </script>
+          <!-- END: REACT Footer Component -->
+
         </div>
       </div>
     </div>
