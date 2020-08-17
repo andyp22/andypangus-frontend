@@ -11,6 +11,20 @@ export default {
 
 const Template: Story<HeaderProps> = (args) => <Header {...args} />;
 
+const loggedOnProps = {
+  loggedIn: true,
+  welcomeText: "Welcome, Johnny Test",
+  logButtonLabel: "Logout",
+};
+
+const loggedOutProps = {
+  loggedIn: false,
+  logButtonLabel: "Login",
+  showLogin: true,
+  showRegister: true,
+  registerButtonLabel: "Register",
+};
+
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
   title: "The Rosedale Pages",
@@ -19,7 +33,16 @@ LoggedIn.args = {
   momlabel: "Her Side",
   momUrl: "pedigree.php?personID=I1&amp;tree=pageFamily",
   featureLinksMarkup: `<a href="http://tngsitebuilding.com" title="Third Link">Third Link</a>|<a href="http://tngsitebuilding.com/blog" title="Fourth Link">Fourth Link</a>`,
+  loginProps: loggedOnProps,
 };
 
 export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+LoggedOut.args = {
+  title: "The Rosedale Pages",
+  dadLabel: "His Side",
+  dadUrl: "pedigree.php?personID=I2&amp;tree=pageFamily",
+  momlabel: "Her Side",
+  momUrl: "pedigree.php?personID=I1&amp;tree=pageFamily",
+  featureLinksMarkup: `<a href="http://tngsitebuilding.com" title="Third Link">Third Link</a>|<a href="http://tngsitebuilding.com/blog" title="Fourth Link">Fourth Link</a>`,
+  loginProps: loggedOutProps,
+};

@@ -1,0 +1,21 @@
+// Viewport
+$max-width: 1440px !default;
+
+// Colors
+$color-black: #1e1e1e;
+$primary-gray: #eeeeee;
+
+// Borders
+$test-border: 1px solid red;
+
+// Spacing
+$spacing-default: 16px;
+$spacing-xs: $spacing-default / 4 !default;
+$spacing-s: $spacing-default / 2 !default;
+$spacing-m: $spacing-default !default;
+$spacing-l: $spacing-default * 2 !default;
+$spacing-xl: $spacing-default * 4 !default;
+
+// Fonts
+$font-weight-normal: 500;
+$font-weight-bold: 700;

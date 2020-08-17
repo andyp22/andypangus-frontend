@@ -1,26 +1,69 @@
-.wrapper {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+@import "../../../design-tokens/variables";
 
-svg {
-  display: inline-block;
-  vertical-align: top;
-}
+.site-header {
+  width: 100%;
 
-h1 {
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 1;
-  margin: 6px 0 6px 10px;
-  display: inline-block;
-  vertical-align: top;
-}
+  &__main {
+    display: block;
+    position: relative;
 
-button + button {
-  margin-left: 10px;
+    &:before {
+      display: inline-block;
+      content: "";
+      background-image: url(../../../assets/header-image.jpg);
+      background-repeat: no-repeat;
+      background-position: 100% 115%;
+      background-clip: content-box;
+      box-shadow: 60px 0 25px 0 white inset;
+      height: 150px;
+      width: 40%;
+      position: absolute;
+      z-index: -1;
+      right: 0;
+    }
+  }
+
+  &__eyebrow {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__branding {
+    display: block;
+    font-family: "IM Fell DW Pica SC", serif;
+    padding-bottom: $spacing-m;
+  }
+
+  &__logo {
+    font-size: 50px;
+
+    a {
+      color: $color-black;
+
+      &:active,
+      &:hover,
+      &:focus {
+        color: $color-black;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__navigation {
+    display: block;
+
+    &-menu {
+      &-item a {
+        padding: $spacing-s 12px;
+        display: inline-block;
+
+        &:active,
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background-color: $primary-gray;
+        }
+      }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Header } from "../shared/Header/Header";
+import { LoginProps } from "../shared/Login/Login";
 import "./page.scss";
 
 export interface PageProps {
@@ -10,6 +11,7 @@ export interface PageProps {
   momlabel?: string;
   momUrl?: string;
   featureLinksMarkup?: string;
+  loginProps: LoginProps;
 }
 
 export const Page: React.FC<PageProps> = ({
@@ -19,8 +21,9 @@ export const Page: React.FC<PageProps> = ({
   momlabel,
   momUrl,
   featureLinksMarkup,
+  loginProps,
 }) => (
-  <article>
+  <div id="page-wrapper">
     <Header
       title={title}
       dadLabel={dadLabel}
@@ -28,6 +31,7 @@ export const Page: React.FC<PageProps> = ({
       momlabel={momlabel}
       momUrl={momUrl}
       featureLinksMarkup={featureLinksMarkup}
+      loginProps={loginProps}
     />
 
     <section>
@@ -96,5 +100,5 @@ export const Page: React.FC<PageProps> = ({
         Viewports addon in the toolbar
       </div>
     </section>
-  </article>
+  </div>
 );

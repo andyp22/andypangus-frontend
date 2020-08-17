@@ -1,0 +1,42 @@
+@import "../../../design-tokens/variables";
+
+.login-menu {
+  &__list {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      display: inline-block;
+      padding: 0 $spacing-xs;
+      margin: 0;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    padding: $spacing-s $spacing-m;
+    display: inline-block;
+
+    &:active,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: $primary-gray;
+    }
+  }
+
+  &__welcome {
+    display: inline-block;
+    padding-right: 24px;
+    font-weight: $font-weight-bold;
+  }
+}
