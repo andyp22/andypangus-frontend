@@ -12,16 +12,16 @@ export default {
 const Template: Story<HeaderProps> = (args) => <Header {...args} />;
 
 const loggedOnProps = {
-  loggedIn: true,
+  loggedIn: "true",
   welcomeText: "Welcome, Johnny Test",
   logButtonLabel: "Logout",
 };
 
 const loggedOutProps = {
-  loggedIn: false,
+  loggedIn: "false",
   logButtonLabel: "Login",
-  showLogin: true,
-  showRegister: true,
+  showLogin: "true",
+  showRegister: "true",
   registerButtonLabel: "Register",
 };
 

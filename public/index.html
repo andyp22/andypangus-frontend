@@ -41,7 +41,14 @@
               dadUrl: 'pedigree.php?personID=I2&amp;tree=pageFamily',
               momlabel: 'Her Side',
               momUrl: 'pedigree.php?personID=I1&amp;tree=pageFamily',
-              featureLinksMarkup: `<a href="http://tngsitebuilding.com" title="Third Link">Third Link</a>|<a href="http://tngsitebuilding.com/blog" title="Fourth Link">Fourth Link</a>`
+              featureLinksMarkup: `<a href="http://tngsitebuilding.com" title="Third Link">Third Link</a>|<a href="http://tngsitebuilding.com/blog" title="Fourth Link">Fourth Link</a>`,
+              loginProps: {
+                loggedIn: false,
+                logButtonLabel: "Login",
+                showLogin: true,
+                showRegister: true,
+                registerButtonLabel: "Register",
+              }
             };
             document.getElementById("HeaderContainerWrapper").setAttribute('data-props', JSON.stringify(props));
           </script>

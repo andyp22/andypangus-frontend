@@ -2,7 +2,6 @@ import React from "react";
 import { Navbar, Alignment } from "@blueprintjs/core";
 
 import "./Header.scss";
-import * as headerImage from "../../../assets/header-image.jpg";
 
 import { Login, LoginProps } from "../Login/Login";
 
