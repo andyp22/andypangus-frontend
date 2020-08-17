@@ -7,7 +7,7 @@
     display: block;
     position: relative;
 
-    &:before {
+    &:after {
       display: inline-block;
       content: "";
       background-image: url(./assets/header-image.jpg);
@@ -16,9 +16,10 @@
       background-clip: content-box;
       box-shadow: 60px 0 25px 0 white inset;
       height: 150px;
-      width: 40%;
+      width: 595px;
       position: absolute;
       right: 0;
+      top: 0;
     }
   }
 
